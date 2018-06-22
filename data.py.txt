@@ -1,0 +1,12 @@
+from flask import Flask
+from flask.ext.mysqldb
+app=Flask(__name__)
+mysql=MySQL(app)
+@app.route('/')
+def users();
+cur=mysql.connection.cursor()
+cur.execute('''SELECT user,host FROKM mysql.user''')
+rv=cur.fetchall()
+return str(rv)
+if _name_=='_main_':
+app.run(debug=True)
